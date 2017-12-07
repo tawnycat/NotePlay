@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="piano_style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="piano.js"></script>
+<script src="https://unpkg.com/vexflow/releases/vexflow-debug.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
+<script src = "pianoSound.js"></script>
+<link rel="stylesheet" href="music.css">
+<link rel="stylesheet" href="notes.css">
+
+</head>
+<body>
+<div id="container">
+  <div id="boo"></div>
+</div>
+<div id="controls">
+  <button id='add-note'>Add Note</button>
+  <button id='right-answer'>Right Answer</button>
+</div>
+
+
+<ul class="DA-PianoKeyboard">
+            <li id = "c3" class="whiteKey">c3</li>
+            <li id = "c3s" class="blackKeySharp c3s"><p>♯</p></li>
+            <li id = "d3f" class="blackKeyFlat c3s"><p>♭</p></li>
+            <li id = "d3" class="whiteKey"></li>
+            <li id = "d3s" class="blackKeySharp d3s"></li>
+            <li id = "e3f" class="blackKeyFlat d3s"></li>
+            <li id = "e3" class="whiteKey"></li>
+            <li id = "f3" class="whiteKey"></li>
+            <li id = "f3s" class="blackKeySharp f3s"></li>
+            <li id = "g3f" class="blackKeyFlat f3s"></li>
+            <li id = "g3" class="whiteKey"></li>
+            <li id = "g3s" class="blackKeySharp g3s"></li>
+            <li id = "a3f" class="blackKeyFlat g3s"></li>
+            <li id = "a3" class="whiteKey"></li>
+            <li id = "a3s" class="blackKeySharp a3s"></li>
+            <li id = "b3f" class="blackKeyFlat a3s"></li>
+            <li id = "b3" class="whiteKey"></li>
+            <li id = "c4" class="whiteKey">c3</li>
+            <li id = "c4s" class="blackKeySharp c4s"><p>♯</p></li>
+            <li id = "d4f" class="blackKeyFlat c4s"><p>♭</p></li>
+            <li id = "d4" class="whiteKey"></li>
+            <li id = "d4s" class="blackKeySharp d4s"></li>
+            <li id = "e4f" class="blackKeyFlat d4s"></li>
+            <li id = "e4" class="whiteKey"></li>
+            <li id = "f4" class="whiteKey"></li>
+            <li id = "f4s" class="blackKeySharp f4s"></li>
+            <li id = "g4f" class="blackKeyFlat f4s"></li>
+            <li id = "g4" class="whiteKey"></li>
+            <li id = "g4s" class="blackKeySharp g4s"></li>
+            <li id = "a4f" class="blackKeyFlat g4s"></li>
+            <li id = "a4" class="whiteKey"></li>
+            <li id = "a4s" class="blackKeySharp a4s"></li>
+            <li id = "b4f" class="blackKeyFlat a4s"></li>
+            <li id = "b4" class="whiteKey"></li>
+            <li id = "c5" class="whiteKey">c4</li>
+            
+
+         </ul>
+
+         <table class="example">
+            <tr>
+                <td><div id="metronome_container"></div></td>
+            </tr>
+            <tr>
+                <td colspan=2 id="inputs"></td>
+            </tr>
+        </table>
+
+
+
+<script src ="music.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="metronome.js"></script>
+
+        <script>
+/*global $ Raphael soundManager metronome*/
+
+function tick(t) {
+    $("<div />").html(t % 2 === 1 ? "Tick" : "Tock").addClass("statusline").appendTo(".status");
+    $("#count").html(t);    
+}
+
+function done() {
+    $("<div />").html("Done!").addClass("statusline").css("background-color", "#FFFF99").appendTo(".status");
+    $("#startstop").html("start");
+}
+
+var paper = Raphael("metronome_container", 200, 200);
+
+var m = metronome({
+    len: 200,
+    angle: 20,
+    tick: tick,
+    complete: done,
+    paper: paper,
+    audio: "https://github.com/wilson428/metronome/blob/master/tick.wav?raw=true"
+});
+
+m.make_input("#inputs");
+
+m.shapes().outline.attr("fill", "#00A30F");
+m.shapes().arm.attr("stroke", "#EEE");
+        </script>
+
+</body>
+
+</html>
