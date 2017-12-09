@@ -15,6 +15,9 @@ app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
+// Serves public files
+app.use(express.static('public'));
+
 //Models
 var models = require("./models");
  
@@ -36,16 +39,13 @@ models.sequelize.sync().then(function() {
 });
 
 //For Handlebars
-app.set('views', './views')
-app.engine('hbs', exphbs({
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Home Page Route for Testing
 app.get('/', function(req, res) {
 
-    res.send('Welcome to Passport with Sequelize');
+    res.send("This is the front page, should add links to sign up or sign in here");
 
 });
 
