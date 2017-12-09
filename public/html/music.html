@@ -4,12 +4,12 @@
 	<title></title>
 	<link rel="stylesheet" href="piano_style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="piano.js"></script>
+<script src="../js/piano.js"></script>
 <script src="https://unpkg.com/vexflow/releases/vexflow-debug.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
-<script src = "pianoSound.js"></script>
-<link rel="stylesheet" href="music.css">
-<link rel="stylesheet" href="notes.css">
+<script src = "../js/pianoSound.js"></script>
+<link rel="stylesheet" href="../css/music.css">
+<link rel="stylesheet" href="../css/notes.css">
 
 </head>
 <body>
@@ -76,7 +76,7 @@
 <script src ="music.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="metronome.js"></script>
+<script src="../../models/metronome.js"></script>
 
         <script>
 /*global $ Raphael soundManager metronome*/
@@ -99,7 +99,7 @@ var m = metronome({
     tick: tick,
     complete: done,
     paper: paper,
-    audio: "https://github.com/wilson428/metronome/blob/master/tick.wav?raw=true"
+    audio: "../sounds/tick.wav"
 });
 
 m.make_input("#inputs");

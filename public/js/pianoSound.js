@@ -1,30 +1,30 @@
 $( document ).ready(function() {
 
-    const c3 = new Audio("sounds/key (28).wav");
-    const c3s = new Audio("sounds/key (29).wav");
-    const d3 = new Audio("sounds/key (30).wav");
-    const d3s = new Audio("sounds/key (31).wav");
-    const e3 = new Audio("sounds/key (32).wav");
-    const f3 = new Audio("sounds/key (33).wav");
-    const f3s = new Audio("sounds/key (34).wav");
-    const g3 = new Audio("sounds/key (35).wav");
-    const g3s = new Audio("sounds/key (36).wav");
-    const a3 = new Audio("sounds/key (37).wav");
-    const a3s = new Audio("sounds/key (38).wav");
-    const b3 = new Audio("sounds/key (39).wav");
-    const c4 = new Audio("sounds/key (40).wav");
-    const c4s = new Audio("sounds/key (41).wav");
-    const d4 = new Audio("sounds/key (42).wav");
-    const d4s = new Audio("sounds/key (43).wav");
-    const e4 = new Audio("sounds/key (44).wav");
-    const f4 = new Audio("sounds/key (45).wav");
-    const f4s = new Audio("sounds/key (46).wav");
-    const g4 = new Audio("sounds/key (47).wav");
-    const g4s = new Audio("sounds/key (48).wav");
-    const a4 = new Audio("sounds/key (49).wav");
-    const a4s = new Audio("sounds/key (50).wav");
-    const b4 = new Audio("sounds/key (51).wav");
-    const c5 = new Audio("sounds/key (52).wav");
+    const c3 = new Audio("./public/sounds/key (28).wav");
+    const c3s = new Audio("./public/sounds/key (29).wav");
+    const d3 = new Audio("./public/sounds/key (30).wav");
+    const d3s = new Audio("./public/sounds/key (31).wav");
+    const e3 = new Audio("./public/sounds/key (32).wav");
+    const f3 = new Audio("./public/sounds/key (33).wav");
+    const f3s = new Audio("./public/sounds/key (34).wav");
+    const g3 = new Audio("./public/sounds/key (35).wav");
+    const g3s = new Audio("./public/sounds/key (36).wav");
+    const a3 = new Audio("./public/sounds/key (37).wav");
+    const a3s = new Audio("./public/sounds/key (38).wav");
+    const b3 = new Audio("./public/sounds/key (39).wav");
+    const c4 = new Audio("./public/sounds/key (40).wav");
+    const c4s = new Audio("./public/sounds/key (41).wav");
+    const d4 = new Audio("./public/sounds/key (42).wav");
+    const d4s = new Audio("./public/sounds/key (43).wav");
+    const e4 = new Audio("./public/sounds/key (44).wav");
+    const f4 = new Audio("./public/sounds/key (45).wav");
+    const f4s = new Audio("./public/sounds/key (46).wav");
+    const g4 = new Audio("./public/sounds/key (47).wav");
+    const g4s = new Audio("./public/sounds/key (48).wav");
+    const a4 = new Audio("./public/sounds/key (49).wav");
+    const a4s = new Audio("./public/sounds/key (50).wav");
+    const b4 = new Audio("./public/sounds/key (51).wav");
+    const c5 = new Audio("./public/sounds/key (52).wav");
 
 
 
