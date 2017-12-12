@@ -3,9 +3,7 @@ var app = express();
 var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var env = require('dotenv').config();
 var exphbs = require('express-handlebars');
-var db = new Sequelize({user: process.env.DB_USER, password: process.env.DB_PASS})
 
 //For BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,7 +22,7 @@ var models = require("./models");
  
 //Routes
 var loginRoute = require('./routes/loginroutes.js')(app,passport);
-var lessonRoute = require('.routes/lessonroutes.js');
+var lessonRoute = require('./routes/lessonroutes.js');
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, models.user);

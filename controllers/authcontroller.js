@@ -1,7 +1,7 @@
 var exports = module.exports = {};
 
-exports.home = function(req, res) {
-    res.render('home');
+exports.start = function(req, res) {
+    res.render('start');
 }
 
 exports.signup = function(req, res) {
@@ -12,8 +12,8 @@ exports.signin = function(req, res) {
     res.render('signin');
 }
 
-exports.dashboard = function(req, res) {
-    res.render('dashboard');
+exports.home = function(req, res) {
+    res.render('lessonHome');
 }
 
 exports.logout = function(req, res) {
