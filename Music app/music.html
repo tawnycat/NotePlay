@@ -3,24 +3,36 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="piano_style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <script src="https://unpkg.com/vexflow/releases/vexflow-debug.js"></script>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
 
 <link rel="stylesheet" href="notes.css">
-<script src = "notes.js"></script>
+<script src = "gscale.js"></script>
 </head>
 <body>
+
+
+        <h1 class="text-center">The G Scale</h1>
+
+
         <div id="wrapper">
-        <canvas id="score" height="300" width="800"></canvas>
+        <canvas id="score" height="250" width="1300"></canvas>
     </div>
 
-<div id = "KeyBoardWrapper">
+
+
+
+       <br>
+       <br>
+             
+                
     <ul class="DA-PianoKeyboard">
             <li id = "c3" class="whiteKey key"></li>
-            <li id = "c3s" class="blackKeySharp key c3s"><p>♯</p></li>
-            <li id = "d3f" class="blackKeyFlat key c3s"><p>♭</p></li>
+            <li id = "c3s" class="blackKeySharp key c3s"><p></p></li>
+            <li id = "d3f" class="blackKeyFlat key c3s"><p></p></li>
             <li id = "d3" class="whiteKey key"></li>
             <li id = "d3s" class="blackKeySharp key d3s"></li>
             <li id = "e3f" class="blackKeyFlat d3s key"></li>
@@ -36,8 +48,8 @@
             <li id = "b3f" class="blackKeyFlat key a3s"></li>
             <li id = "b3" class="whiteKey key"></li>
             <li id = "c4" class="whiteKey key"></li>
-            <li id = "c4s" class="blackKeySharp key c4s"><p>♯</p></li>
-            <li id = "d4f" class="blackKeyFlat key c4s"><p>♭</p></li>
+            <li id = "c4s" class="blackKeySharp key c4s"><p></p></li>
+            <li id = "d4f" class="blackKeyFlat key c4s"><p></p></li>
             <li id = "d4" class="whiteKey key"></li>
             <li id = "d4s" class="blackKeySharp key d4s"></li>
             <li id = "e4f" class="blackKeyFlat key d4s"></li>
@@ -58,19 +70,27 @@
          </ul>
      </div>
 
-         <div id = "currentKeyWrapper">
-             
-                <p id = "currentKey"></p>
-         </div>
+        <h2 class="text-center" id = "currentKey">Your current key</h2>
 
-         <table class="example">
+  
+ <br>
+   
+
+
+
+  <div class="row">
+
+             <table class="col-md-4 col-md-offset-5" style= "margin-left: 700px" class="example">
             <tr>
                 <td><div id="metronome_container"></div></td>
             </tr>
             <tr>
-                <td colspan=2 id="inputs"></td>
+                <td colspan=1 id="inputs"></td>
             </tr>
         </table>
+
+    </div>
+             <br>
 
 
 
