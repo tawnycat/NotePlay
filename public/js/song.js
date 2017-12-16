@@ -58,22 +58,28 @@ var keyToNote = {
     101 : "c5"
 }
 
-
+$(".key p").hide();
 
 $(".key").hover(function(){
         $("#currentKey").html(this.id).css({"color":"black","font-size":"30px"});
-        }, function(){
-        $(this).html("");
     });
 
+    $(".key").on("mouseenter",function(){
+        $(this).find('p').show();
 
 
+    })
+
+    $(".key").on("mouseleave",function(){
+        $(this).find('p').hide();
+        
+    })
 
 
 
 var state = {
 
-    notes:["g3","a3","b3","c4","d4","e4","f4s","g4","f4s","e4","d4","c4","b3","a3","g3"],
+    notes:["e4","e4","e4","e4","e4","e4","e4","g4","c4","d4","e4","f4","f4","f4","f4","f4","e4","e4","e4","g4","g4","f4","d4","c4"],
 
     notesPlayed:[]
 }
@@ -113,8 +119,8 @@ CANVAS);
     var ctx = renderer.getContext();
 
 
-    var topStaff = new Vex.Flow.Stave(250, 30, 850);
-    var bottomStaff = new Vex.Flow.Stave(250, 90, 850);
+    var topStaff = new Vex.Flow.Stave(250, 0, 850);
+    var bottomStaff = new Vex.Flow.Stave(250, 60, 850);
 
     topStaff.addClef("treble").addTimeSignature('4/4')
     bottomStaff.addClef("bass").addTimeSignature('4/4')
@@ -135,22 +141,30 @@ CANVAS);
 
 
       var notes = [
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["g/3"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["a/3"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["b/3"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["c/4"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["d/4"], duration: "q" }),
     new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["f#/4"], duration: "q" }).addAccidental(0, new Vex.Flow.Accidental("#")),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "h" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "h" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
     new Vex.Flow.StaveNote({clef: "treble", keys: ["g/4"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["f#/4"], duration: "q" }).addAccidental(0, new Vex.Flow.Accidental("#")),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["c/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["d/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "w" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["f/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["f/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["f/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["f/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["f/4"], duration: "q" }),
     new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "h" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["e/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["g/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["g/4"], duration: "q" }),
+    new Vex.Flow.StaveNote({clef: "treble", keys: ["f/4"], duration: "q" }),
     new Vex.Flow.StaveNote({clef: "treble", keys: ["d/4"], duration: "q" }),
     new Vex.Flow.StaveNote({clef: "treble", keys: ["c/4"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["b/3"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["a/3"], duration: "q" }),
-    new Vex.Flow.StaveNote({clef: "treble", keys: ["g/3"], duration: "q" }),
-  
   
 
 
@@ -200,11 +214,25 @@ $('#startstop').bind('keypress', function(e)
     render(note);
     animWhite("#" + note);
     animBlack("." + note);
-   console.log(state.notes)
-   console.log(state.notesPlayed)
-}
+       }
+
+
 
 })
+
+
+$(".key").on('click',function(){
+
+    var note = $(this).attr('id')
+    state.notesPlayed.push(note)
+    sounds[note].currentTime = 0
+    sounds[note].play();
+    render(note);
+    animWhite("#" + note);
+    animBlack("." + note)
+
+})
+
 
 
 
@@ -236,11 +264,21 @@ $('#startstop').bind('keypress', function(e)
 
  }
 
+ $('#wrapper').hide()
+
+ $('#currentKey').hide()
+
+  $('.DA-PianoKeyboard').hide()
+
 $('#startstop').on('click', function()
 {
   
    start()
-   
+
+   $('#instruct').html("")  
+   $('#wrapper').show() 
+   $('.DA-PianoKeyboard').show()
+   $('#currentKey').show()
 })
 })
 

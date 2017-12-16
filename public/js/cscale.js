@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     function start(){
 
@@ -60,15 +59,22 @@ var keyToNote = {
 
 
 
+$(".key p").hide();
+
 $(".key").hover(function(){
         $("#currentKey").html(this.id).css({"color":"black","font-size":"30px"});
-        }, function(){
-        $(this).html("");
     });
 
-$(".key").on("click", function(){}
-    
-    )
+    $(".key").on("mouseenter",function(){
+        $(this).find('p').show();
+
+
+    })
+
+    $(".key").on("mouseleave",function(){
+        $(this).find('p').hide();
+        
+    })
 
 
 
@@ -113,8 +119,8 @@ CANVAS);
     var ctx = renderer.getContext();
 
 
-    var topStaff = new Vex.Flow.Stave(0, 30, 900);
-    var bottomStaff = new Vex.Flow.Stave(0, 90, 900);
+    var topStaff = new Vex.Flow.Stave(250, 0, 850);
+    var bottomStaff = new Vex.Flow.Stave(250, 60, 850);
 
     topStaff.addClef("treble").addTimeSignature('4/4')
     bottomStaff.addClef("bass").addTimeSignature('4/4')
@@ -200,12 +206,25 @@ $('#startstop').bind('keypress', function(e)
     render(note);
     animWhite("#" + note);
     animBlack("." + note);
-   console.log(state.notes)
-   console.log(state.notesPlayed)
-}
+ 
+    }
+
+
 
 })
 
+
+$(".key").on('click',function(){
+    
+    
+    var note = $(this).attr('id')
+    state.notesPlayed.push(note)
+    sounds[note].currentTime = 0
+    sounds[note].play();
+    render(note);
+    animWhite("#" + note);
+    animBlack("." + note)
+})
 
 
 
@@ -235,11 +254,21 @@ $('#startstop').bind('keypress', function(e)
 
  }
 
- $('#startstop').on('click', function()
+ $('#wrapper').hide()
+
+ $('#currentKey').hide()
+
+  $('.DA-PianoKeyboard').hide()
+
+$('#startstop').on('click', function()
 {
   
    start()
-   
+
+   $('#instruct').html("")  
+   $('#wrapper').show() 
+   $('.DA-PianoKeyboard').show()
+   $('#currentKey').show()
 })
 })
 
