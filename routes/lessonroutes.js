@@ -1,7 +1,9 @@
 var lessonController = require('../controllers/lessonController.js');
 
-// Example on how to do the routes
+module.exports = function (app) {
+    app.get('/home/lessonone', (req, res) => lessonController.renderStaff(req, res,"C Scale", "cscale"));
 
-module.exports = function () {
-    app.get('/dashboard/lessonexample', lessonController.renderStaff(lessonTitle, lessonJavascript));
+    app.get('/home/lessontwo', (req, res) => lessonController.renderStaff(req, res, "G Scale", "gscale"));
+
+    app.get('/home/lessonthree', (req, res) => lessonController.renderStaff("Jingle Bells", "song"));
 }

@@ -62,7 +62,7 @@ body :-ms-input-placeholder {
   left: 0;
   width: 100%;
   min-height: 100%;
-  padding-top: 15px;
+  /*padding-top: 15px;*/
 }
 
 .bg-bubbles {
