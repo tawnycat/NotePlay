@@ -47,7 +47,7 @@ app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
 // Listener
-app.listen(3000, function(err) {
+app.listen(process.env.PORT || 3000, function(err) {
 
     if (!err)
         console.log("Site is live");
