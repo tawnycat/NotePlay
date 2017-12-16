@@ -5,6 +5,7 @@
  */
  html body{ 
  	height: 100%;
+  background-color: #51b8a3;
   }
 
 @media (min-width: 992px) {
@@ -20,7 +21,7 @@
   padding: 0;
   font-weight: 300;
 }
-body {
+ body {
   font-family: 'Pacifico', cursive;
 	color: white;
   font-weight: 300;
@@ -50,8 +51,8 @@ body :-ms-input-placeholder {
   font-family: 'Pacifico', cursive;
   color: white;
   font-weight: 300;
-}
-.wrapper {
+} 
+/* .wrapper {
   background: #50a3a2;
   background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
   background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
@@ -62,7 +63,7 @@ body :-ms-input-placeholder {
   left: 0;
   width: 100%;
   min-height: 100%;
-  /*padding-top: 15px;*/
+  /*padding-top: 15px;
 }
 
 .bg-bubbles {
@@ -159,7 +160,7 @@ body :-ms-input-placeholder {
   100% {
     transform: translateY(-700px) rotate(600deg);
   }
-}
+} */
 
 /*footer {
     position: absolute;
@@ -172,13 +173,13 @@ body :-ms-input-placeholder {
 	display: flex;
   min-height: 100vh;
   flex-direction: column;
-}*/
-
-
-.contentContainer{
-	padding-bottom: 20px;
 }
 
+
+*/ .contentContainer{
+	padding-bottom: 20px;
+} 
+
 footer {
-  height: 10px;
+  height: 3%;
 }
