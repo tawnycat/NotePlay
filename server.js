@@ -23,7 +23,7 @@ require('./config/passport/passport.js')(passport, models.user);
  
 //Routes
 var loginRoute = require('./routes/loginroutes.js')(app,passport);
-var lessonRoute = require('./routes/lessonroutes.js')(app);
+var lessonRoute = require('./routes/lessonroutes.js')(app, passport);
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
