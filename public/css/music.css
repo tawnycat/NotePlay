@@ -1,0 +1,11 @@
+.correct {
+  opacity: 0;
+}
+
+#controls {
+  padding: 15px;
+}
+
+#controls > button {
+  margin: 5px;
+}
