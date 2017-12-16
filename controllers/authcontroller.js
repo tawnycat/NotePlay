@@ -1,19 +1,15 @@
 var exports = module.exports = {};
 
-exports.signup = function(req, res) {
-    res.render('signup');
-}
-
 exports.signin = function(req, res) {
-    res.render('signin');
+    res.render('signin', { layout: 'login' });
 }
 
 exports.signup = function(req, res) {
-    res.render('signup');
+    res.render('signup', { layout: 'login' });
 }
 
 exports.home = function(req, res) {
-    res.render('lessonHome');
+    res.render('lessonHome', { layout: 'lessonHome' });
 }
 
 exports.logout = function(req, res) {

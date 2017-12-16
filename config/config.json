@@ -1,7 +1,6 @@
 {
   "development": {
     "username": "root",
-
     "password": "",
     "database": "noteplay",
     "host": "127.0.0.1",

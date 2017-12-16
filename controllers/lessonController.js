@@ -11,6 +11,7 @@ lessonExports.renderStaff = function(req, res, lessonTitle, lessonJavascript) {
 
     res.render('lesson', {
         title: lessonTitle,
+        layout: 'lesson',
         whichJavascript: function() {
             return lessonJavascript;
         }
