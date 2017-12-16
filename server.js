@@ -43,7 +43,7 @@ models.sequelize.sync().then(function() {
 });
 
 //For Handlebars
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
 // Listener
