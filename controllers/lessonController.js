@@ -1,19 +1,16 @@
 var lessonExports = module.exports = {}
+var path = require("path");
 
 // Uses Handlebars dynamic partials to change to each lesson
 
-lessonExports.renderStaff = function(req, res, lessonTitle, lessonJavascript) {
-    console.log(
-    	"req:" + req + "\n" +
-    	"lessonTitle:" + lessonTitle + "\n" +
-    	"lessonJavascript:" + lessonJavascript
-    	);
+lessonExports.lessonOne = function(req, res) {
+    res.sendFile(path.join(__dirname, '../public', '/html/cscale.html'));
+};
 
-    res.render('lesson', {
-        title: lessonTitle,
-        layout: 'lesson',
-        whichJavascript: function() {
-            return lessonJavascript;
-        }
-    });
+lessonExports.lessonTwo = function(req, res) {
+    res.sendFile(path.join(__dirname, '../public', '/html/gscale.html'));
+};
+
+lessonExports.lessonThree = function(req, res) {
+    res.sendFile(path.join(__dirname, '../public', '/html/jinglebells.html'));
 };
